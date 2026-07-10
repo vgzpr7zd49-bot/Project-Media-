@@ -74,6 +74,7 @@ export interface ClientData {
     progress: number;
     phases: PipelinePhase[];
     stills: string[];
+    deliveryDate?: string;
   };
   deliverables: Deliverable[];
   documents: Document[];
@@ -231,6 +232,57 @@ export const CLIENTS: ClientData[] = [
       { id: 'f1', title: 'Guia de Preparação para Gravação', type: 'Article', thumbnail: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800', description: 'Como te preparares para o dia da captação.', url: '#' },
       { id: 'f2', title: 'O Impacto do Color Grading', type: 'Video', thumbnail: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=800', description: 'Vê como transformamos a imagem na pós-produção.', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
     ]
+  },
+  {
+    id: 'casamento-casal-2025',
+    nomeCliente: '[NOME DO CASAL]',
+    nomeProjeto: 'Casamento [NOME CASAL]',
+    accessKeyHash: '5a55afb9ceb45276159b5bd08d1b2f2270c0427780df09c74ace5ee28f5ee274',
+    key: 'PM-41B166-A877F3-861ED4',
+    isAdmin: false,
+    accentColor: '#c9a84c',
+ 
+    pipeline: {
+      currentPhase: 'Proposta Enviada',
+      progress: 5,
+      deliveryDate: 'A definir',
+      phases: [
+        { name: 'Proposta',         label: 'Apresentação enviada ao casal',            status: 'in-progress' },
+        { name: 'Contrato',         label: 'Assinatura e pagamento de sinal',           status: 'pending'     },
+        { name: 'Pré-Produção',     label: 'Reunião de briefing e planeamento do dia',  status: 'pending'     },
+        { name: 'Dia do Casamento', label: 'Captação fotografia e vídeo',               status: 'pending'     },
+        { name: 'Pós-Produção',     label: 'Edição highlights + Same Day Edit',         status: 'pending'     },
+        { name: 'Entrega Final',    label: 'Galeria online + vídeo final entregues',    status: 'pending'     },
+      ],
+      stills: []
+    },
+ 
+    deliverables: [],
+ 
+    documents: [
+      {
+        name: 'Proposta de Casamento — Project Media',
+        type: 'proposal',
+        date: new Date().toLocaleDateString('pt-PT'),
+        url: '/proposals/proposta-casamento-casal.html',
+        signed: false,
+      },
+    ],
+ 
+    notes: [
+      {
+        id: 'n1',
+        author: 'Rafael',
+        role: 'team',
+        text: 'Bem-vindos ao vosso portal privado Project Media. Aqui podem acompanhar todas as etapas do vosso projeto, consultar a proposta e trocar mensagens connosco. Estamos muito felizes por poder fazer parte do vosso dia especial.',
+        timestamp: new Date().toLocaleDateString('pt-PT', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        }),
+      },
+    ],
+ 
+    feed: [],
   }
 ];
 

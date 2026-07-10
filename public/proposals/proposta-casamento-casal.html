@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Casamento — Project Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0a0a0a;
+            --color-bg-card: #121212;
+            --color-primary: #c9a84c;
+            --color-primary-hover: #b08f37;
+            --color-text: #e5e5e5;
+            --color-text-muted: #a3a3a3;
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-tag {
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        /* Container & Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* Philosophy */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .philosophy-text p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .philosophy-text strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .philosophy-img {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            aspect-ratio: 16/10;
+        }
+
+        .philosophy-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: transform 0.5s ease;
+        }
+
+        .philosophy-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Packs */
+        .packs-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .packs-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .pack-card {
+            background-color: var(--color-bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pack-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .pack-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background-color: rgba(201, 168, 76, 0.15);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        .pack-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .pack-price {
+            font-size: 2rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-family: var(--font-display);
+        }
+
+        .pack-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .pack-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+        }
+
+        .pack-features li::before {
+            content: "✦";
+            color: var(--color-primary);
+            margin-right: 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        /* Same Day Edit Section */
+        .highlight-section {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .highlight-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .highlight-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .highlight-text {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Next Steps */
+        .cta-section {
+            text-align: center;
+            background-color: var(--color-bg-card);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 6rem 2rem;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .cta-subtitle {
+            color: var(--color-text-muted);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #000000;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #050505;
+            color: #404040;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Apresentação Exclusiva</p>
+            <h1 class="hero-title">O Cinema no Vosso Grande Dia</h1>
+            <p class="hero-subtitle">Porque cada momento merece ser contado como uma verdadeira obra de arte audiovisual. Convosco, criamos memórias eternas.</p>
+            <a href="#proposta" class="btn-primary">Descobrir Proposta</a>
+        </div>
+    </section>
+
+    <!-- Nossa Filosofia -->
+    <section class="container" id="filosofia">
+        <div class="grid-2">
+            <div class="philosophy-text">
+                <span class="section-tag">A Nossa Visão</span>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Cinema Como Linguagem</h2>
+                <p>No <strong>Project Media</strong>, não nos limitamos a registar o vosso casamento. Nós traduzimos as vossas emoções, olhares e sorrisos numa <strong>narrativa cinematográfica</strong> única.</p>
+                <p>Com recurso a equipamentos topo de gama e técnicas avançadas de realização, captação e pós-produção, garantimos que cada plano conta uma história profunda e genuína.</p>
+                <p>Acreditamos na beleza da espontaneidade. Procuramos captar os momentos naturais de forma discreta, garantindo que se sentem completamente à vontade enquanto aproveitam cada segundo do vosso dia especial.</p>
+            </div>
+            <div class="philosophy-img">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200" alt="Wedding Film">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposta / Packs -->
+    <section class="container" id="proposta" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="section-header">
+            <span class="section-tag">Orçamento Personalizado</span>
+            <h2 class="section-title">Soluções & Investimento</h2>
+        </div>
+
+        <div class="packs-grid">
+            <!-- Pack Cinema & Foto -->
+            <div class="pack-card">
+                <span class="pack-badge">Recomendado</span>
+                <h3 class="pack-title">Cinema & Fotografia Completa</h3>
+                <div class="pack-price">2.450€</div>
+                <ul class="pack-features">
+                    <li>Cobertura Completa (Preparativos ao Fim da Festa)</li>
+                    <li>2 Videógrafos + 2 Fotógrafos dedicados</li>
+                    <li>Drone Coverage (Captação Aérea de Alta Resolução)</li>
+                    <li>Same Day Edit (Vídeo editado e exibido no próprio dia)</li>
+                    <li>Documentário Completo (30 a 45 min)</li>
+                    <li>Teaser / Highlights de Casamento (3 a 5 min)</li>
+                    <li>Galeria Online Premium com +800 Fotos Tratadas</li>
+                    <li>Entrega Física em Caixa de Madeira USB Personalizada</li>
+                </ul>
+            </div>
+
+            <!-- Pack Vídeo Story -->
+            <div class="pack-card">
+                <h3 class="pack-title">Cinema Story (Vídeo)</h3>
+                <div class="pack-price">1.650€</div>
+                <ul class="pack-features">
+                    <li>Cobertura Completa (Preparativos ao Fim da Festa)</li>
+                    <li>2 Videógrafos Profissionais</li>
+                    <li>Drone Coverage (Sujeito a condições meteorológicas)</li>
+                    <li>Teaser / Highlights de Casamento (3 a 5 min)</li>
+                    <li>Documentário de Casamento (25 a 35 min)</li>
+                    <li>Áudio em alta definição (votos e discursos em estúdio)</li>
+                    <li>Entrega digital segura em cloud dedicada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same Day Edit Highlight -->
+    <section class="highlight-section">
+        <div class="highlight-content">
+            <span class="section-tag" style="color: var(--color-primary);">A Magia do Momento</span>
+            <h2 class="highlight-title">Same Day Edit (SDE)</h2>
+            <p class="highlight-text">Imaginem os vossos convidados reunidos durante a sobremesa, as luzes do salão a apagarem-se e, de repente, um ecrã gigante a mostrar os vossos preparativos, a vossa cerimónia e a vossa chegada ao copo de água com uma edição de vídeo arrepiante. O SDE é uma experiência mágica e emotiva que surpreende todos.</p>
+        </div>
+    </section>
+
+    <!-- Chamada para Ação / Aceitação -->
+    <section class="cta-section">
+        <h2 class="cta-title">Vamos Escrever Este Capítulo Juntos?</h2>
+        <p class="cta-subtitle">Se sentirem que a nossa visão e estilo combinam com o que idealizam para o vosso dia, entrem em contacto para agendarmos uma reunião presencial ou chamada de vídeo.</p>
+        <a href="mailto:info@projectmedia.pt?subject=Proposta%20de%20Casamento" class="btn-primary">Agendar Reunião de Briefing</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2026 Project Media Inc. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

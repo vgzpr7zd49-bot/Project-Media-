@@ -45,7 +45,14 @@ export const DocumentsTab: React.FC<DocumentsTabProps> = ({ client }) => {
                   <FileText size={18} className="text-zinc-500" />
                   <span className="text-sm font-bold">{doc.name}</span>
                 </div>
-                <button className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 hover:text-white">Ver Documento</button>
+                  <a
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 hover:text-white transition-colors"
+                  >
+                    Ver Proposta →
+                  </a>
               </div>
             ))}
             {filtered.filter(d => d.type === 'contract').map((doc, idx) => (
