@@ -156,10 +156,58 @@ const ProjectDetail: React.FC = () => {
                 </a>
               </div>
             )}
-            {project.videoUrl ? (
+            {project.stills && project.stills.length > 0 ? (
+              project.videoUrl ? (
+                <div className="space-y-6">
+                  <h3 className="text-xs uppercase tracking-widest text-zinc-600">Video Content</h3>
+                  <div className="aspect-video w-full bg-zinc-900 overflow-hidden border border-zinc-800">
+                    <iframe 
+                      src={project.videoUrl} 
+                      className="w-full h-full"
+                      title={project.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              ) : (
+                <button className="flex items-center space-x-4 bg-white text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-zinc-200 transition-colors">
+                  <Play size={16} fill="black" />
+                  <span>Request Preview</span>
+                </button>
+              )
+            ) : null}
+          </div>
+        </div>
+
+        <div className="lg:col-span-8 space-y-8">
+          {project.stills && project.stills.length > 0 ? (
+            <>
+              <h3 className="text-xs uppercase tracking-widest text-zinc-600">Still Frames</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {project.stills.map((still, idx) => (
+                  <div 
+                    key={idx} 
+                    className="group relative bg-zinc-900 aspect-video overflow-hidden cursor-pointer"
+                    onClick={() => setSelectedImageIndex(idx)}
+                  >
+                    <img 
+                      src={still} 
+                      alt={`${project.title} Still ${idx + 1}`} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            project.videoUrl && (
               <div className="space-y-6">
-                <h3 className="text-xs uppercase tracking-widest text-zinc-600">Video Content</h3>
-                <div className="aspect-video w-full bg-zinc-900 overflow-hidden border border-zinc-800">
+                <h3 className="text-xs uppercase tracking-widest text-zinc-600">Project Video</h3>
+                <div className="aspect-video w-full bg-zinc-950 overflow-hidden border border-zinc-800 rounded-xl shadow-2xl">
                   <iframe 
                     src={project.videoUrl} 
                     className="w-full h-full"
@@ -170,34 +218,8 @@ const ProjectDetail: React.FC = () => {
                   ></iframe>
                 </div>
               </div>
-            ) : (
-              <button className="flex items-center space-x-4 bg-white text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-zinc-200 transition-colors">
-                <Play size={16} fill="black" />
-                <span>Request Preview</span>
-              </button>
-            )}
-          </div>
-        </div>
-
-        <div className="lg:col-span-8 space-y-8">
-          <h3 className="text-xs uppercase tracking-widest text-zinc-600">Still Frames</h3>
-          <div className="grid grid-cols-2 gap-4">
-            {project.stills.map((still, idx) => (
-              <div 
-                key={idx} 
-                className="group relative bg-zinc-900 aspect-video overflow-hidden cursor-pointer"
-                onClick={() => setSelectedImageIndex(idx)}
-              >
-                <img 
-                  src={still} 
-                  alt={`${project.title} Still ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-              </div>
-            ))}
-          </div>
+            )
+          )}
         </div>
       </section>
 

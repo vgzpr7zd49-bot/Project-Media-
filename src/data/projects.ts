@@ -236,6 +236,19 @@ export const PROJECTS: Project[] = [
     videoUrl: 'https://www.youtube.com/embed/3px9d_7RUDA',
     role: 'Visual & Cinematic Production',
     isFeatured: true
+  },
+  {
+    id: '14',
+    title: 'CASAMENTO — THE WEDDING FILM',
+    slug: 'casamento-the-wedding-film',
+    year: '2026',
+    type: 'Documentary',
+    synopsis: 'Um registo cinematográfico sublime e intimista de um dia inesquecível. Através de uma abordagem discreta e documental, a Project Media imortalizou cada emoção, olhar e abraço espontâneo, transformando o dia do casamento numa narrativa cinematográfica intemporal que celebra o amor em todas as suas formas.',
+    coverImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1700',
+    stills: [],
+    videoUrl: 'https://drive.google.com/file/d/1MFw4knaTYACRsWBzQB92v50St1YTeG_x/preview',
+    role: 'Cinematography & Post-Production',
+    isFeatured: true
   }
 ];
 
