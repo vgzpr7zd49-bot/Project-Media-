@@ -249,32 +249,61 @@ export const PROJECTS: Project[] = [
     videoUrl: 'https://drive.google.com/file/d/1MFw4knaTYACRsWBzQB92v50St1YTeG_x/preview',
     role: 'Cinematography & Post-Production',
     isFeatured: true
+  },
+  {
+    id: '15',
+    title: 'JOGO DOS VETERANOS',
+    slug: 'jogo-dos-veteranos',
+    year: '2024',
+    type: 'Photography',
+    synopsis: 'Um Jogo, Duas Histórias, Uma Só Paixão\n\nEm junho de 2024, a Project Media teve a honra de documentar um momento especial: o jogo de veteranos entre pais de jogadores e antigos atletas do Futebol Clube de Oliveira do Hospital e do Futebol Clube de Chaves.\n\nMais do que uma partida de futebol, este foi um encontro de gerações e de memórias. Em campo, homens que um dia vestiram a camisola pelo desporto que amam voltaram a fazê-lo, não pela competição, mas pela amizade, pelo respeito mútuo entre clubes e pelo prazer de reviver, por 90 minutos, a energia dos tempos de juventude.\n\nA nossa missão foi captar essa emoção genuína: os sorrisos antes do apito inicial, o esforço em campo, os abraços no final, e o orgulho silencioso de quem representa as suas raízes e a sua comunidade. Um dia de desporto, mas também de identidade, memória coletiva e celebração do que verdadeiramente une um clube: as pessoas.',
+    coverImage: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1700',
+    stills: [
+      'https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1431324155629-1a6edd1dec1d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1200'
+    ],
+    role: 'Photography & Event Documentation',
+    isFeatured: true
   }
 ];
 
 export const CAPACITIES: Capacity[] = [
   {
     id: 'c1',
-    title: 'Cinematographic Production',
-    description: 'We don\'t just capture images; we build worlds. From feature films to high-end narratives, our production pipeline is built on artistic rigor.',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1000'
+    title: 'Tour 360',
+    description: 'Imersão digital completa para o seu espaço. Desenvolvemos visitas virtuais interativas de altíssima definição, permitindo que os seus clientes explorem cada detalhe de forma realista e interativa a partir de qualquer dispositivo.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000'
   },
   {
     id: 'c2',
-    title: 'Strategic Visual Campaigns',
-    description: 'Where strategy meets the silver screen. We translate complex brand goals into visual languages that demand attention and command respect.',
-    image: 'https://images.unsplash.com/photo-1524511751214-bbad450c9307?auto=format&fit=crop&q=80&w=1000'
+    title: 'Eventos',
+    description: 'Documentação cinematográfica e documental de momentos únicos. Seja um casamento, batizado ou evento empresarial, captamos a atmosfera, as emoções espontâneas e os detalhes mais pormenorizados com um olhar artístico e intemporal.',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000'
   },
   {
     id: 'c3',
-    title: 'Documentary & Narrative',
-    description: 'Authenticity as an editorial choice. We craft narratives that linger, finding the cinematic core in real-world events and histories.',
-    image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=1000'
+    title: 'Produção Imobiliária',
+    description: 'Valorização visual de excelência para o mercado de prestígio. Produzimos fotografia e vídeo imobiliário com enquadramentos precisos, luz ideal e técnicas de edição sofisticadas que elevam o valor percebido de cada propriedade.',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000'
   },
   {
     id: 'c4',
-    title: 'Content for Digital Impact',
-    description: 'The digital space requires a cinematic standard. We bring our feature-film mentality to every screen, regardless of size or format.',
-    image: 'https://images.unsplash.com/photo-1551817958-c5b5d1b70a3f?auto=format&fit=crop&q=80&w=1000'
+    title: 'Serviços Aéreos',
+    description: 'Perspetivas únicas e ângulos deslumbrantes. Com equipamento de última geração e pilotos devidamente qualificados, captamos imagens aéreas que trazem uma escala grandiosa e um impacto cinematográfico incomparável ao seu projeto.',
+    image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1000'
+  },
+  {
+    id: 'c5',
+    title: 'Videoclipes',
+    description: 'Tradução visual da vossa arte musical. Colaboramos intimamente com artistas e bandas para criar vídeos musicais dinâmicos, cheios de estilo e com narrativas visuais marcantes que amplificam a mensagem e o ritmo de cada faixa.',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=1000'
+  },
+  {
+    id: 'c6',
+    title: 'Publicidade',
+    description: 'Conteúdo de vídeo estratégico concebido para converter e emocionar. Desenvolvemos campanhas publicitárias e spots comerciais sob medida que comunicam a identidade da sua marca, conectam com o público e impulsionam o seu negócio.',
+    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000'
   }
 ];

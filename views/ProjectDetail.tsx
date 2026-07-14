@@ -125,71 +125,71 @@ const ProjectDetail: React.FC = () => {
       </section>
 
       {/* Information & Stills */}
-      <section className="py-24 px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 max-w-7xl mx-auto">
-        <div className="lg:col-span-4 space-y-12">
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-zinc-600 mb-6">The Synopsis</h3>
-            <p className="text-xl font-light leading-relaxed text-zinc-300">
-              {project.synopsis}
-            </p>
-          </div>
-          
-          <div className="pt-8 border-t border-zinc-900 grid grid-cols-2 gap-8">
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Role</p>
-              <p className="text-sm uppercase tracking-wide">{project.role}</p>
-            </div>
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Released</p>
-              <p className="text-sm uppercase tracking-wide">{project.year}</p>
-            </div>
-          </div>
-
-          <div className="pt-12">
-            {project.albumUrl && (
-              <div className="mb-8">
-                <a 
-                  href={`mailto:kibsliz5@gmail.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
-                  className="flex items-center justify-center space-x-4 bg-[#c9a84c] text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-[#b0913b] transition-colors w-full md:w-auto"
-                >
-                  <span>Solicitar Acesso ao Álbum</span>
-                </a>
-              </div>
-            )}
-            {project.stills && project.stills.length > 0 ? (
-              project.videoUrl ? (
-                <div className="space-y-6">
+      {project.slug === 'sao-jose-2026' ? (
+        <>
+          {/* Video First */}
+          {project.videoUrl && (
+            <section className="pt-16 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
                   <h3 className="text-xs uppercase tracking-widest text-zinc-600">Video Content</h3>
-                  <div className="aspect-video w-full bg-zinc-900 overflow-hidden border border-zinc-800">
-                    <iframe 
-                      src={project.videoUrl} 
-                      className="w-full h-full"
-                      title={project.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+                  <span className="text-[10px] uppercase tracking-widest text-[#c9a84c] bg-[#c9a84c]/10 px-3 py-1 rounded">Documentary Feature</span>
                 </div>
-              ) : (
-                <button className="flex items-center space-x-4 bg-white text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-zinc-200 transition-colors">
-                  <Play size={16} fill="black" />
-                  <span>Request Preview</span>
-                </button>
-              )
-            ) : null}
-          </div>
-        </div>
+                <div className="aspect-video w-full bg-zinc-950 overflow-hidden border border-zinc-800 rounded-xl shadow-2xl">
+                  <iframe 
+                    src={project.videoUrl} 
+                    className="w-full h-full"
+                    title={project.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+          )}
 
-        <div className="lg:col-span-8 space-y-8">
-          {project.stills && project.stills.length > 0 ? (
-            <>
-              <h3 className="text-xs uppercase tracking-widest text-zinc-600">Still Frames</h3>
-              <div className="grid grid-cols-2 gap-4">
+          {/* Synopsis (Texto) Second */}
+          <section className="py-12 px-6 md:px-12 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-zinc-900">
+            <div className="md:col-span-8">
+              <h3 className="text-xs uppercase tracking-widest text-zinc-600 mb-6 font-bold">The Synopsis</h3>
+              <p className="text-xl font-light leading-relaxed text-zinc-300 whitespace-pre-line">
+                {project.synopsis}
+              </p>
+            </div>
+            <div className="md:col-span-4 space-y-8 pt-2">
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Role</p>
+                  <p className="text-sm uppercase tracking-wide">{project.role}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Released</p>
+                  <p className="text-sm uppercase tracking-wide">{project.year}</p>
+                </div>
+              </div>
+              {project.albumUrl && (
+                <div className="pt-4 border-t border-zinc-900">
+                  <a 
+                    href={`mailto:kibsliz5@gmail.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
+                    className="flex items-center justify-center space-x-4 bg-[#c9a84c] text-black px-6 py-3 uppercase tracking-widest text-xs font-bold hover:bg-[#b0913b] transition-colors w-full"
+                  >
+                    <span>Solicitar Acesso ao Álbum</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* Stills (Fotos) Third */}
+          {project.stills && project.stills.length > 0 && (
+            <section className="py-12 pb-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-zinc-900">
+              <h3 className="text-xs uppercase tracking-widest text-zinc-600 mb-8 font-bold">Still Frames</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {project.stills.map((still, idx) => (
                   <div 
                     key={idx} 
-                    className="group relative bg-zinc-900 aspect-video overflow-hidden cursor-pointer"
+                    className="group relative bg-zinc-900 aspect-video overflow-hidden cursor-pointer rounded-lg border border-zinc-900"
                     onClick={() => setSelectedImageIndex(idx)}
                   >
                     <img 
@@ -202,26 +202,108 @@ const ProjectDetail: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </>
-          ) : (
-            project.videoUrl && (
-              <div className="space-y-6">
-                <h3 className="text-xs uppercase tracking-widest text-zinc-600">Project Video</h3>
-                <div className="aspect-video w-full bg-zinc-950 overflow-hidden border border-zinc-800 rounded-xl shadow-2xl">
-                  <iframe 
-                    src={project.videoUrl} 
-                    className="w-full h-full"
-                    title={project.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-            )
+            </section>
           )}
-        </div>
-      </section>
+        </>
+      ) : (
+        <section className="py-24 px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 max-w-7xl mx-auto">
+          <div className="lg:col-span-4 space-y-12">
+            <div>
+              <h3 className="text-xs uppercase tracking-widest text-zinc-600 mb-6">The Synopsis</h3>
+              <p className="text-xl font-light leading-relaxed text-zinc-300 whitespace-pre-line">
+                {project.synopsis}
+              </p>
+            </div>
+            
+            <div className="pt-8 border-t border-zinc-900 grid grid-cols-2 gap-8">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Role</p>
+                <p className="text-sm uppercase tracking-wide">{project.role}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">Released</p>
+                <p className="text-sm uppercase tracking-wide">{project.year}</p>
+              </div>
+            </div>
+
+            <div className="pt-12">
+              {project.albumUrl && (
+                <div className="mb-8">
+                  <a 
+                    href={`mailto:kibsliz5@gmail.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
+                    className="flex items-center justify-center space-x-4 bg-[#c9a84c] text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-[#b0913b] transition-colors w-full md:w-auto"
+                  >
+                    <span>Solicitar Acesso ao Álbum</span>
+                  </a>
+                </div>
+              )}
+              {project.stills && project.stills.length > 0 ? (
+                project.videoUrl ? (
+                  <div className="space-y-6">
+                    <h3 className="text-xs uppercase tracking-widest text-zinc-600">Video Content</h3>
+                    <div className="aspect-video w-full bg-zinc-900 overflow-hidden border border-zinc-800">
+                      <iframe 
+                        src={project.videoUrl} 
+                        className="w-full h-full"
+                        title={project.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </div>
+                ) : (
+                  <button className="flex items-center space-x-4 bg-white text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-zinc-200 transition-colors">
+                    <Play size={16} fill="black" />
+                    <span>Request Preview</span>
+                  </button>
+                )
+              ) : null}
+            </div>
+          </div>
+
+          <div className="lg:col-span-8 space-y-8">
+            {project.stills && project.stills.length > 0 ? (
+              <>
+                <h3 className="text-xs uppercase tracking-widest text-zinc-600">Still Frames</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {project.stills.map((still, idx) => (
+                    <div 
+                      key={idx} 
+                      className="group relative bg-zinc-900 aspect-video overflow-hidden cursor-pointer"
+                      onClick={() => setSelectedImageIndex(idx)}
+                    >
+                      <img 
+                        src={still} 
+                        alt={`${project.title} Still ${idx + 1}`} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              project.videoUrl && (
+                <div className="space-y-6">
+                  <h3 className="text-xs uppercase tracking-widest text-zinc-600">Project Video</h3>
+                  <div className="aspect-video w-full bg-zinc-950 overflow-hidden border border-zinc-800 rounded-xl shadow-2xl">
+                    <iframe 
+                      src={project.videoUrl} 
+                      className="w-full h-full"
+                      title={project.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Up Next */}
       <section className="py-32 bg-zinc-950 border-t border-zinc-900 flex flex-col items-center justify-center text-center">
