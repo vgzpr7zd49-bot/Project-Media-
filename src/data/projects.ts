@@ -266,6 +266,29 @@ export const PROJECTS: Project[] = [
     ],
     role: 'Photography & Event Documentation',
     isFeatured: true
+  },
+  {
+    id: 'som-dos-ceus',
+    title: 'Som dos Céus',
+    slug: 'som-dos-ceus',
+    year: '2026',
+    date: '2026-07-16',
+    type: 'Social/Conteúdo',
+    category: 'social',
+    synopsis: 'Videoclipe gospel que celebra a positividade e a confiança de que cada percurso, mesmo o mais incerto, está a ser conduzido por um propósito maior. "Som dos Céus" une imagem, música e mensagem numa narrativa visual que convida à esperança e à fé — um lembrete de que tudo se realiza no seu tempo certo.',
+    description: 'Videoclipe gospel que celebra a positividade e a confiança de que cada percurso, mesmo o mais incerto, está a ser conduzido por um propósito maior. "Som dos Céus" une imagem, música e mensagem numa narrativa visual que convida à esperança e à fé — um lembrete de que tudo se realiza no seu tempo certo.',
+    coverImage: '/projects/som-dos-ceus/cover.webp',
+    stills: [
+      '/projects/som-dos-ceus/01.webp',
+      '/projects/som-dos-ceus/02.webp',
+    ],
+    gallery: [
+      '/projects/som-dos-ceus/01.webp',
+      '/projects/som-dos-ceus/02.webp',
+    ],
+    videoUrl: 'https://www.youtube.com/embed/WcfvImHOhYQ',
+    role: 'Videoclipe & Direção Artística',
+    isFeatured: true
   }
 ];
 

@@ -827,7 +827,7 @@ export const RentalTab: React.FC<RentalTabProps> = ({ client }) => {
         </p>
         <div className="pt-2">
           <a
-            href="mailto:info@projectmedia.pt?subject=Pedido de Aluguer / Feedback Inventário"
+            href="mailto:geral@projectmediainc.com?subject=Pedido de Aluguer / Feedback Inventário"
             className="inline-block bg-white hover:bg-zinc-200 text-black px-6 py-3 rounded-xl text-[10px] uppercase tracking-[0.3em] font-extrabold shadow-lg transition-all"
           >
             Solicitar Aluguer Equips →

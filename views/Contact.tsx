@@ -296,8 +296,8 @@ const Contact: React.FC = () => {
                   <Mail className="text-[#FAE8BB]" size={20} />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-zinc-500 mb-1">Email</p>
-                  <a href="mailto:info@projectmedia.pt" className="text-lg text-white hover:text-[#FAE8BB] transition-colors">info@projectmedia.pt</a>
+                  <p className="text-xs uppercase tracking-widest text-zinc-500 mb-1">Contacto Geral</p>
+                  <a href="mailto:geral@projectmediainc.com" className="text-lg text-white hover:text-[#FAE8BB] transition-colors font-medium">geral@projectmediainc.com</a>
                 </div>
               </div>
 

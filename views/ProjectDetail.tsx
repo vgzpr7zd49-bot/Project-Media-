@@ -171,7 +171,7 @@ const ProjectDetail: React.FC = () => {
               {project.albumUrl && (
                 <div className="pt-4 border-t border-zinc-900">
                   <a 
-                    href={`mailto:kibsliz5@gmail.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
+                    href={`mailto:geral@projectmediainc.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
                     className="flex items-center justify-center space-x-4 bg-[#c9a84c] text-black px-6 py-3 uppercase tracking-widest text-xs font-bold hover:bg-[#b0913b] transition-colors w-full"
                   >
                     <span>Solicitar Acesso ao Álbum</span>
@@ -230,7 +230,7 @@ const ProjectDetail: React.FC = () => {
               {project.albumUrl && (
                 <div className="mb-8">
                   <a 
-                    href={`mailto:kibsliz5@gmail.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
+                    href={`mailto:geral@projectmediainc.com?subject=Solicitação de Acesso ao Álbum: ${project.title}&body=Gostaria de solicitar o acesso para visualizar o álbum completo do projeto ${project.title}.`}
                     className="flex items-center justify-center space-x-4 bg-[#c9a84c] text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-[#b0913b] transition-colors w-full md:w-auto"
                   >
                     <span>Solicitar Acesso ao Álbum</span>

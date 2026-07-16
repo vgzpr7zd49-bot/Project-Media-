@@ -101,7 +101,7 @@ export const NotesTab: React.FC<NotesTabProps> = ({ client }) => {
         <p className="text-[9px] uppercase tracking-widest text-zinc-700 font-bold">
           Nota: Estas notas são guardadas localmente no teu navegador.
         </p>
-        <a href="mailto:info@projectmedia.pt"
+        <a href="mailto:geral@projectmediainc.com"
           className="block text-[10px] uppercase tracking-widest text-zinc-600 hover:text-white transition-colors font-bold">
           Dúvidas urgentes? Envia um email →
         </a>

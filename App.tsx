@@ -75,12 +75,10 @@ const Footer = memo(() => (
         <Link to="/contact" className="hover:text-zinc-400">Collaborate</Link>
       </div>
       <div className="space-y-4">
-        <p className="text-xs uppercase tracking-widest text-zinc-600">Offices</p>
-        <p className="text-sm font-light">Portugal & Global</p>
-        <div className="pt-8">
-           <a href="mailto:contact@projectmedia.inc" className="group flex items-center text-lg md:text-xl font-serif hover:text-zinc-400 transition-colors">
-            Get in touch <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
-          </a>
+        <p className="text-xs uppercase tracking-widest text-zinc-600">Contacto</p>
+        <div>
+          <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Contacto Geral</p>
+          <a href="mailto:geral@projectmediainc.com" className="text-sm hover:text-zinc-300 transition-colors">geral@projectmediainc.com</a>
         </div>
       </div>
     </div>

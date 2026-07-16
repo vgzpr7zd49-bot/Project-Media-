@@ -15,26 +15,6 @@ const Capacities: React.FC = () => {
         </p>
       </header>
 
-      <div className="space-y-32 px-6 md:px-12 pb-24">
-        {CAPACITIES.map((capacity, idx) => (
-          <div 
-            key={capacity.id} 
-            className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24`}
-          >
-            <div className="w-full md:w-1/2 aspect-square md:aspect-video overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-zinc-900 rounded-lg">
-              <img src={capacity.image} alt={capacity.title} className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div className="w-full md:w-1/2 space-y-6">
-              <span className="text-zinc-600 text-xs font-mono">0{idx + 1} //</span>
-              <h2 className="text-4xl md:text-5xl font-serif">{capacity.title}</h2>
-              <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-md">
-                {capacity.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* Collaboration / Retainer Section */}
       <section className="px-6 md:px-12 pb-32 max-w-7xl mx-auto">
         <div className="border border-zinc-900 bg-zinc-950/40 rounded-3xl p-8 md:p-16 relative overflow-hidden">
@@ -92,6 +72,26 @@ const Capacities: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <div className="space-y-32 px-6 md:px-12 pb-32">
+        {CAPACITIES.map((capacity, idx) => (
+          <div 
+            key={capacity.id} 
+            className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24`}
+          >
+            <div className="w-full md:w-1/2 aspect-square md:aspect-video overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-zinc-900 rounded-lg">
+              <img src={capacity.image} alt={capacity.title} className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="w-full md:w-1/2 space-y-6">
+              <span className="text-zinc-600 text-xs font-mono">0{idx + 1} //</span>
+              <h2 className="text-4xl md:text-5xl font-serif">{capacity.title}</h2>
+              <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-md">
+                {capacity.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

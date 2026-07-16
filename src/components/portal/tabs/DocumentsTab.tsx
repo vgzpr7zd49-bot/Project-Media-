@@ -84,7 +84,7 @@ export const DocumentsTab: React.FC<DocumentsTabProps> = ({ client }) => {
       </div>
 
       <div className="pt-8 border-t border-zinc-900 text-center">
-        <a href="mailto:info@projectmedia.pt"
+        <a href="mailto:geral@projectmediainc.com"
           className="text-[10px] uppercase tracking-widest text-zinc-600 hover:text-white transition-colors font-bold">
           Questões? Fala com o Rafael →
         </a>

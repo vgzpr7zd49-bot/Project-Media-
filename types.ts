@@ -1,5 +1,5 @@
 
-export type ProjectType = 'Feature' | 'Documentary' | 'Strategic Campaign' | 'Political' | 'Commercial' | 'Photography' | 'Short Film';
+export type ProjectType = 'Feature' | 'Documentary' | 'Strategic Campaign' | 'Political' | 'Commercial' | 'Photography' | 'Short Film' | 'Social/Conteúdo';
 
 export interface Project {
   id: string;
@@ -14,6 +14,10 @@ export interface Project {
   albumUrl?: string;
   role: string;
   isFeatured?: boolean;
+  category?: string;
+  date?: string;
+  gallery?: string[];
+  description?: string;
 }
 
 export interface Capacity {
